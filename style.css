@@ -1,0 +1,37 @@
+/*웹표준*/
+*{ margin: 0; padding: 0;}
+ul, dl, ol{ list-style: none;}
+a{ color: #222; text-decoration: none;}
+img{ border: none;}
+
+/*공통클래스*/
+.container{ width: 1000px; margin: 0 auto;} /*가운데정렬 할려고!*/
+.gray{background: #ccc;}  /*테스트할때 임의로 넣을려고 쓴 클래스*/
+.clear:after{ content: ""; display: block; clear: both;} /*스타일양을 줄여주는 역할! 공통클래스*/
+
+/*상단*/
+﻿#hd{ position: relative; z-index: 1000;} /*포지션 왜 넣냐구? z-index땜에 어쩔수없이 넣은거에요*/
+
+/*로고*/
+#hd h1{ float: left;}
+
+/*상단링크들*/
+#hd a{ display: block;} /*이거 빼먹지말기 엄청 중요!! 잘 까먹음*/
+
+/*네비게이션*/
+#gnb{ float: right;}
+
+/*대메뉴*/
+#gnb>li{ display: inline-block; /* >:자손선택자,반드시 꺽세 써주기,gnb li{} 이렇게하면 gnb안에 li중복되는거 다 선택됨*/
+         position: relative;
+         padding: 0 15px;
+         background: red;}
+#gnb .d1{line-height: 46px; /*라인하이트는 로고의 이미지높이와 동일하게*/
+         font-size: 1.2em;}
+
+/*소메뉴*/
+#gnb .d2{position: absolute; left: -10px; top: 100% or 46px; font-size: 0.95em;
+         width: 150px; background: pink; padding: 10px;
+         display: none;}
+
+#gnb>li:hover .d2{ display: block;}
